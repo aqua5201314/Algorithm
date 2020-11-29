@@ -5,9 +5,16 @@
 
 ## :pencil2: 动态规划
 - [	#322 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
+- [	#198 打家劫舍](https://leetcode-cn.com/problems/house-robber/)
+- [	#213 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/)
 - [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/)
-- [	#309 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
+
 - [	#121 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
+- [	#122 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+- [	#309 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
+- [	#714 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
+- [	#123 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
+- [	#188 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)
 - [	#55 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
 - [	#435 无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/)
 - [#518 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/)
@@ -31,12 +38,8 @@
 - [	#63 不同路径 II	](https://leetcode-cn.com/problems/unique-paths-ii/)
 - [	#62 不同路径](https://leetcode-cn.com/problems/unique-paths/)
 - [	#5 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/)
-- [	#213 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/)
-- [	#198 打家劫舍](https://leetcode-cn.com/problems/house-robber/)
-- [	#123 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
-- [	#188 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)
-- [	#714 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
-- [	#122 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+
+
 - []()
 - []()
 - []()
