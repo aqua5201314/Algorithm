@@ -4,9 +4,9 @@
 
 
 ## :pencil2: 动态规划
-- [	#322 零钱兑换](https://leetcode-cn.com/problems/coin-change/),dp[i-coin]
-- [	#198 打家劫舍](https://leetcode-cn.com/problems/house-robber/),
-- [	#213 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/)
+- [	#322 零钱兑换](https://leetcode-cn.com/problems/coin-change/) dp[i-coin]
+- [	#198 打家劫舍](https://leetcode-cn.com/problems/house-robber/) dp[i]=max(dp[i-1],dp[i-2]+nums[i])
+- [	#213 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) 调用两次，一次偷前不偷尾，另一次相反
 - [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/)
 
 - [	#121 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
