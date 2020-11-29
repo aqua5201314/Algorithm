@@ -109,8 +109,8 @@
 - []()
 - []()
 ## :computer: 二叉树
-- [513. 找树左下角的值](https://leetcode-cn.com/problems/find-bottom-left-tree-value/)
-- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
+- [513. 找树左下角的值](https://leetcode-cn.com/problems/find-bottom-left-tree-value/) 层序遍历，i=0时res保存，到最后一层res就是答案
+- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/) int left=help(root->left)不管root是哪一个节点，它的left就一定是这个root的左子树节点数，return 1+left+right
 - [112 路径总和](https://leetcode-cn.com/problems/path-sum/)
 - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
 - [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
