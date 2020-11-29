@@ -23,12 +23,12 @@
 - [	#剑指 Offer 10- I 斐波那契数列](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/) 注意取模,dp_i,dp_pre_i,tmp压缩空间
 - [	#746 使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) 从上阶梯或上上阶梯来dp[i]=max(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2]),int tmp,dp_pre_i,dp_i压缩空间
 - [	#718 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) 子数组包含A[i],B[i]，A[i]B[i]等，dp[i][j]=dp[i-1][j-1]+1,不等，dp[i][j]=0;
-- [	#343 整数拆分](https://leetcode-cn.com/problems/integer-break/) 要么拆一个j，(i-j)*j,要么保持先前dp[i]要么提取j后对dp[i-j]再提取dp[i]=max(j*(i-j),max(dp[i],j*dp[i-j])srr        h,.xxxxxds
-- [	#300 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
-- [	#279 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)
-- [	#1277 统计全为 1 的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/)
-- [	#221 最大正方形](https://leetcode-cn.com/problems/maximal-square/)
-- [	#152 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/)
+- [	#343 整数拆分](https://leetcode-cn.com/problems/integer-break/) 要么拆一个j，(i-j) * j,要么不变，dp[i]要么继续拆j * dp[i-j]
+- [	#300 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) dp[i]=max(dp[j]+1,dp[i])要么从j过来要么不要
+- [	#279 完全平方数](https://leetcode-cn.com/problems/perfect-squares/) dp[i]=min(dp[i-j* j]+1,dp[i])要么用j要么不用
+- [	#1277 统计全为 1 的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/) dp[i][j]=min(dp[i-1][j],min(dp[i][j-1],dp[i-1][j-1]),dp[i][j]是以i,j为右下顶点，全是1的最大正方形边长，也是个数，不断count+=dp[i][j]
+- [	#221 最大正方形](https://leetcode-cn.com/problems/maximal-square/) max_dp不断找出dp[i][j]最大值就是最大边长
+- [	#152 乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) 由于负负可能很大，维护max_dp[i] min_dp[i],二个每次都要在max_dp[i-1]* nums[i],min_dp[i-1]* nums[i], nums[i]中取一个最大和最小保存
 - [	#120 三角形最小路径和](https://leetcode-cn.com/problems/triangle/)
 - [	#70 爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)
 - [	#64 最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/)
