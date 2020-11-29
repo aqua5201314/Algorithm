@@ -114,12 +114,12 @@
 - [112 路径总和](https://leetcode-cn.com/problems/path-sum/) bool left=help(root->left) 实现(不管root是哪个root，它的left就一定能表示这个root从左边下去最终能否符合题意),需要做到(if(到了叶节点)return root->val==sum,sum在每一次递归前要sum-=root->val)，return left||right求出root作为根节点能否符合题意
 - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) 第一步{int left=help(root->left) 实现(不管root是哪个root，它的left就一定能表示这个root左子树高度),需要做到(if(没有节点)return 0),return max(left,right)+1求出root作为根节点最大高度}  第二步{bool left=isBalanced(root->left),实现(不管root是哪个root，它的left就一定能表示这个root左子树的左右子树也满足题意),需要做到(if(没有节点)return true,if(abs(height(root->left) - height(root->right)) <= 1)才能进入下次递归，return left&&right求出root作为根结点能否符合题意 }
 - [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)已经实现
-- [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/)
-- [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
-- [501. 二叉搜索树中的众数](https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/)
-- [429. N叉树的层序遍历](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/)
-- [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/)
-- [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)
+- [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/) bool left=help(p->left,q->left) 实现(不管p q是哪个p q，他们的left就一定能表示这两个p q左子树是否相同),需要做到(if(!q&&!p)return true;if(!p&&q)return false;if(p&&!q)return false;if(p->val!=q->val)return false),return left&&right求出pq作为根结点能否符合题意
+- [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) bool out=help(p->left,q->right),实现(不管p q是哪个p q，他们的out就一定能表示这两个pq靠外的子树是否相同),需要做到(if(!q&&!p)return true;if(!p&&q)return false;if(p&&!q)return false;if(p->val!=q->val)return false),return out&&in求出pq作为根结点能否符合题意
+- [501. 二叉搜索树中的众数](https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/) 特殊题，unordered_map<int,int>map在中序遍历中用map[root->val]++统计频率,vector<pair<int,int>>vec_sort(map.begin(),map.end())给频率排序，vector<int>res给频率最大几个vec_sort取出return
+- [429. N叉树的层序遍历](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/) 层序遍历，特点是for(auto child:children)q.push(child)
+- [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) help(root->left),实现(不管root是哪个root，从左边下去时都能添加root->val和->到string path),需要做到(if(!root)return;path+=to_string(root->val);if(到了根结点)return path;求出路径)
+- [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) help(root->left),实现(不管root是哪个root，从左边下去都能添加左叶子到int res),需要做到(if(!root)return 0;if(到了左叶子父节点)res+=root->left->val;),return res求出root作为根结点的左子叶数
 - [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 - [	#235 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
 - [	#226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
