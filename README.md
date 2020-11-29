@@ -5,10 +5,10 @@
 
 ## :pencil2: 动态规划
 - [	#322 零钱兑换](https://leetcode-cn.com/problems/coin-change/) dp[i-coin]
-- [	#198 打家劫舍](https://leetcode-cn.com/problems/house-robber/) dp[i]=max(dp[i-1],dp[i-2]+nums[i])
+- [	#198 打家劫舍](https://leetcode-cn.com/problems/house-robber/) dp[i]=max(dp[i-1],dp[i-2]+nums[i]),int tmp,dp_i,dp_pre_i压缩空间
 - [	#213 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) 调用两次，一次偷前不偷尾，另一次相反
 - [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/) pair中first不偷second偷，看root偷yes和不偷no哪个大
-- [	#121 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) dp[i][k][1]=(dp[i-1][k][1],dp[i-1][k-1][0]-prices[i])k=1去k，右边只剩-prices[i]
+- [	#121 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) dp[i][k][1]=(dp[i-1][k][1],dp[i-1][k-1][0]-prices[i])k=1去k，右边只剩-prices[i],dp_i_0,dp_i_1压缩空间
 - [	#122 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) k可直接去除
 - [	#309 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)//买入时dp[i-2][0]-prices[i],如果不是前2天卖而是前好几天，本应是dp[i-1][0]-prices[i]但二者结果相同因为i-1天没有交易
 - [	#714 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) -fee
@@ -18,12 +18,12 @@
 - [	#416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) 01背包dp[i][j]=dp[i-1][j]||dp[i-1][j-nums[i-1]]
 - [	#1143 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) 相同dp[i][j]=1+dp[i-1][j-1],不同dp[i][j]=max(dp[i-1][j],dp[i][j-1])
 - [	#516 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) 左右相同dp[i][j]=2+dp[i+1][j-1],不同dp[i][j]=max(dp[i+1][j],dp[i][j-1])
-- [	#53 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
-- [	#72 编辑距离](https://leetcode-cn.com/problems/edit-distance/)
-- [	#剑指 Offer 10- I 斐波那契数列](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/)
-- [	#746 使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/)
-- [	#718 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/)
-- [	#343 整数拆分](https://leetcode-cn.com/problems/integer-break/)
+- [	#53 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) 子序必须以nums[i]结尾dp[i]=max(dp[i-1]+nums[i],nums[i]),dp_i压缩空间，res不断更新最大值
+- [	#72 编辑距离](https://leetcode-cn.com/problems/edit-distance/) 相同，dp[i][j]=dp[i-1][j-1],不同，删a，删b，都删dp[i][j]=max(dp[i-1][j],max(dp[i][j-1],dp[i-1][j-1])+1
+- [	#剑指 Offer 10- I 斐波那契数列](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/) 注意取模,dp_i,dp_pre_i,tmp压缩空间
+- [	#746 使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) 从上阶梯或上上阶梯来dp[i]=max(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2]),int tmp,dp_pre_i,dp_i压缩空间
+- [	#718 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) 子数组包含A[i],B[i]，A[i]B[i]等，dp[i][j]=dp[i-1][j-1]+1,不等，dp[i][j]=0;
+- [	#343 整数拆分](https://leetcode-cn.com/problems/integer-break/) 要么拆一个j，(i-j)*
 - [	#300 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
 - [	#279 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)
 - [	#1277 统计全为 1 的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/)
