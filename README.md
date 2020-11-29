@@ -110,9 +110,9 @@
 - []()
 ## :computer: 二叉树
 - [513. 找树左下角的值](https://leetcode-cn.com/problems/find-bottom-left-tree-value/) 层序遍历，i=0时res保存，到最后一层res就是答案
-- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/) int left=help(root->left)不管root是哪一个节点，它的left就一定是这个root的左子树节点数，return 1+left+right
-- [112 路径总和](https://leetcode-cn.com/problems/path-sum/)
-- [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/) int left=help(root->left),实现(不管root是哪个root，它的left就一定能表示这个root左子树有多少个节点)，需要做到(if(没有节点)return 0),return 1+left+right求出root作为根结点的节点个数
+- [112 路径总和](https://leetcode-cn.com/problems/path-sum/) bool left=help(root->left) 实现(不管root是哪个root，它的left就一定能表示这个root从左边下去最终能否符合题意),需要做到(if(到了叶节点)return root->val==sum,sum在每一次递归前要sum-=root->val)，return left||right求出root作为根节点能否符合题意
+- [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) 第一步{int left=help(root->left) 实现(不管root是哪个root，它的left就一定能表示这个root左子树高度),需要做到(if(没有节点)return 0),return max(left,right)+1求出root作为根节点最大高度}  第二步{bool left=isBalanced(root->left),实现(不管root是哪个root，它的left就一定能表示这个root左子树的左右子树也满足题意),需要做到(if(没有节点)return true,if(abs(height(root->left) - height(root->right)) <= 1)才能进入下次递归，return left&&right求出root作为根结点能否符合题意 }
 - [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 - [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/)
 - [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
