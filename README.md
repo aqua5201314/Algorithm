@@ -1,19 +1,13 @@
-| 动态规划&nbsp; | 二叉树 | 回溯算法&nbsp;|二分查找| &nbsp;贪心算法&nbsp;&nbsp;|&nbsp;Java&nbsp;&nbsp;|系统设计| &nbsp;&nbsp;工具&nbsp;&nbsp; |编码实践| &nbsp;&nbsp;后记&nbsp;&nbsp; |
+| 动态规划&nbsp; | 二叉树 | 回溯算法&nbsp;|二分查找| &nbsp;贪心算法&nbsp;&nbsp;|&nbsp;Java&nbsp;&nbsp;|待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |
 | :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| [:pencil2:](#pencil2-动态规划) | [:computer:](#computer-二叉树) | [:cloud:](#cloud-回溯算法) | [:art:](#art-二分查找) | [:floppy_disk:](#floppy_disk-贪心算法) |[:coffee:](#coffee-java)| [:bulb:](#bulb-系统设计) |[:wrench:](#wrench-工具)| [:watermelon:](#watermelon-编码实践) |[:memo:](#memo-后记)|
+| [:pencil2:](#pencil2-动态规划) | [:computer:](#computer-二叉树) | [:cloud:](#cloud-回溯算法) | [:art:](#art-二分查找) | [:floppy_disk:](#floppy_disk-贪心算法) |[:coffee:](#coffee-待定)| [:bulb:](#bulb-待定) |[:wrench:](#wrench-待定)| [:watermelon:](#watermelon-待定) |[:memo:](#memo-待定)|
 
 
 ## :pencil2: 动态规划
 - [	#322 零钱兑换](https://leetcode-cn.com/problems/coin-change/)
-- []()
-- []()
 - [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/)
 - [	#309 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
 - [	#121 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
-- []()
-- []()
-- []()
-- []()
 - [	#55 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
 - [	#435 无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/)
 - [#518 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/)
@@ -117,33 +111,16 @@
 - []()
 - []()
 ## :computer: 二叉树
-
-
-
-
-
 - [513. 找树左下角的值](https://leetcode-cn.com/problems/find-bottom-left-tree-value/)
-- []()
 - [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
 - [112 路径总和](https://leetcode-cn.com/problems/path-sum/)
 - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
 - [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)
 - [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/)
 - [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
-- []()
-- []()
-- []()
-- []()
-- []()
-
-
-- []()
-- []()
 - [501. 二叉搜索树中的众数](https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/)
 - [429. N叉树的层序遍历](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/)
 - [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/)
-- []()
-- []()
 - [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)
 - [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 - [	#235 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
@@ -153,16 +130,12 @@
 - [	#129 求根到叶子节点数字之和](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/)
 - [	#117 填充每个节点的下一个右侧节点指针 II	](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/)
 - [	#116 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
-- []()
 - [701. 二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/)
 - [687. 最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/)
 - [617. 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/)
-
 - [543. 二叉树的直径](https://leetcode-cn.com/problems/diameter-of-binary-tree/)
 - [297. 二叉树的序列化与反序列化](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree/)
 - [449. 序列化和反序列化二叉搜索树](https://leetcode-cn.com/problems/serialize-and-deserialize-bst/)
-- []()
-- []()
 - [剑指 Offer 27. 二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/)
 - [剑指 Offer 26. 树的子结构](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/)
 - [572. 另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/)
