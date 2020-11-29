@@ -6,7 +6,7 @@
 ## :pencil2: 动态规划
 ## :computer: 二叉树
 ## :cloud: 回溯算法
-- [46. 全排列](https://leetcode-cn.com/problems/permutations/剑指%20Offer%20题解%20-%20目录.md)
+- [46. 全排列](https://leetcode-cn.com/problems/permutations/.md)
 ## :floppy_disk: 待定
 ## :coffee: 待定
 ## :bulb: 待定 
