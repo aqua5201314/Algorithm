@@ -10,16 +10,14 @@
 - [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/) pair中first不偷second偷，看root偷yes和不偷no哪个大
 - [	#121 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) dp[i][k][1]=(dp[i-1][k][1],dp[i-1][k-1][0]-prices[i])k=1去k，右边只剩-prices[i]
 - [	#122 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) k可直接去除
-- [	#309 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
-- [	#714 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
-- [	#123 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
-- [	#188 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)
-- [	#55 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
-- [	#435 无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/)
-- [#518 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/)
-- [	#416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/)
-- [	#1143 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/)
-- [	#516 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/)
+- [	#309 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)//买入时dp[i-2][0]-prices[i],如果不是前2天卖而是前好几天，本应是dp[i-1][0]-prices[i]但二者结果相同因为i-1天没有交易
+- [	#714 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/) -fee
+- [	#123 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)//同下
+- [	#188 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/) 2k>n时去除k，否则，dp[i][k][0]=max(dp[i-1][k][0],dp[i-1][k][1]+prices[i])dp[i][k][1]=max(dp[i-1][k][1],dp[i-1][k-1][0]-prices[i])
+- [#518 零钱兑换 II](https://leetcode-cn.com/problems/coin-change-2/) 完全背包dp[i][j]=max(dp[i-1][j],dp[i][j-coins[i-1])
+- [	#416 分割等和子集](https://leetcode-cn.com/problems/partition-equal-subset-sum/) 01背包dp[i][j]=dp[i-1][j]||dp[i-1][j-nums[i-1]]
+- [	#1143 最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) 相同dp[i][j]=1+dp[i-1][j-1],不同dp[i][j]=max(dp[i-1][j],dp[i][j-1])
+- [	#516 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/) 左右相同dp[i][j]=2+dp[i+1][j-1],不同dp[i][j]=max(dp[i+1][j],dp[i][j-1])
 - [	#53 最大子序和](https://leetcode-cn.com/problems/maximum-subarray/)
 - [	#72 编辑距离](https://leetcode-cn.com/problems/edit-distance/)
 - [	#剑指 Offer 10- I 斐波那契数列](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/)
@@ -363,8 +361,8 @@
 ## :floppy_disk: 贪心算法
 - [	#452 用最少数量的箭引爆气球](https://leetcode-cn.com/problems/minimum-number-of-arrows-to-burst-balloons/)
 - [#983 最低票价](https://leetcode-cn.com/problems/minimum-cost-for-tickets/)
-- []()
-- []()
+- [	#55 跳跃游戏](https://leetcode-cn.com/problems/jump-game/)
+- [	#435 无重叠区间](https://leetcode-cn.com/problems/non-overlapping-intervals/)
 - []()
 - []()
 - []()
