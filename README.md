@@ -120,11 +120,11 @@
 - [429. N叉树的层序遍历](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/) 层序遍历，特点是for(auto child:children)q.push(child)
 - [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) help(root->left),实现(不管root是哪个root，从左边下去时都能添加root->val和->到string path),需要做到(if(!root)return;path+=to_string(root->val);if(到了根结点)return path;求出路径)
 - [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) help(root->left),实现(不管root是哪个root，从左边下去都能添加左叶子到int res),需要做到(if(!root)return 0;if(到了左叶子父节点)res+=root->left->val;),return res求出root作为根结点的左子叶数
-- [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)
-- [	#235 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/)
-- [	#226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/)
-- [	#199 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
-- [	#124 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/)
+- [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)TreeNode* left=help(root->left),实现(不管root是哪个root，它的left就一定能在这个root左子树有p或q时返回p或q，否则返回空),需要做到(if(!root)return nullptr;if(有p或q)返回p或q，后序遍历，上去时if(!left)返回right)如果left&&right return root求出后序遍历时第一个祖先;
+- [	#235 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) 同上
+- [	#226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/) invertTree(root->left),实现(不管root是哪个root，从左边下去经过每个节点都能翻转)，需要做到(if(!);swap(root->left,root->right);)return root;
+- [	#199 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) 层序遍历，特点是在i=level_size-1时把pop的节点放进res
+- [	#124 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) int left=max(0,help(root->left)),实现(不管root是哪个root，这个root的left就一定能表示左子树一条路径所能贡献的最大值)，需要做到(if(!)return 0;后序遍历返回root的值的左子树所能贡献最大值),return res,res在过程中不断更新root->val+left+right求出所有节点可能值中的最大
 - [	#129 求根到叶子节点数字之和](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/)
 - [	#117 填充每个节点的下一个右侧节点指针 II	](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/)
 - [	#116 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/)
