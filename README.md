@@ -23,7 +23,7 @@
 - [	#剑指 Offer 10- I 斐波那契数列](https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/) 注意取模,dp_i,dp_pre_i,tmp压缩空间
 - [	#746 使用最小花费爬楼梯](https://leetcode-cn.com/problems/min-cost-climbing-stairs/) 从上阶梯或上上阶梯来dp[i]=max(dp[i-1]+cost[i-1],dp[i-2]+cost[i-2]),int tmp,dp_pre_i,dp_i压缩空间
 - [	#718 最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) 子数组包含A[i],B[i]，A[i]B[i]等，dp[i][j]=dp[i-1][j-1]+1,不等，dp[i][j]=0;
-- [	#343 整数拆分](https://leetcode-cn.com/problems/integer-break/) 要么拆一个j，(i-j)*
+- [	#343 整数拆分](https://leetcode-cn.com/problems/integer-break/) 要么拆一个j，(i-j)*j,要么保持先前dp[i]要么提取j后对dp[i-j]再提取dp[i]=max(j*(i-j),max(dp[i],j*dp[i-j])srr        h,.xxxxxds
 - [	#300 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
 - [	#279 完全平方数](https://leetcode-cn.com/problems/perfect-squares/)
 - [	#1277 统计全为 1 的正方形子矩阵](https://leetcode-cn.com/problems/count-square-submatrices-with-all-ones/)
