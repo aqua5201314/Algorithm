@@ -334,10 +334,10 @@
 - []()
 - []()
 ## :art: 二分查找
-## :coffee: 贪心算法
+## :floppy_disk: 贪心算法
 
-## :bulb: 待定 
-## :art: 待定
+## :coffee: 待定 
+## :bulb: 待定
 ## :wrench: 待定
 ## :watermelon: 待定
 ## :memo: 待定
