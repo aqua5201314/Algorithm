@@ -7,10 +7,9 @@
 - [	#322 零钱兑换](https://leetcode-cn.com/problems/coin-change/) dp[i-coin]
 - [	#198 打家劫舍](https://leetcode-cn.com/problems/house-robber/) dp[i]=max(dp[i-1],dp[i-2]+nums[i])
 - [	#213 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) 调用两次，一次偷前不偷尾，另一次相反
-- [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/) 
-
-- [	#121 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/)
-- [	#122 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/)
+- [337. 打家劫舍 III](https://leetcode-cn.com/problems/house-robber-iii/) pair中first不偷second偷，看root偷yes和不偷no哪个大
+- [	#121 买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) dp[i][k][1]=(dp[i-1][k][1],dp[i-1][k-1][0]-prices[i])k=1去k，右边只剩-prices[i]
+- [	#122 买卖股票的最佳时机 II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) k可直接去除
 - [	#309 最佳买卖股票时机含冷冻期](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/)
 - [	#714 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 - [	#123 买卖股票的最佳时机 III](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
