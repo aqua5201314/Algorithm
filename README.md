@@ -6,7 +6,7 @@
 ## :pencil2: 动态规划
 ## :computer: 二叉树
 ## :cloud: 回溯算法
-- [46. 全排列](https://leetcode-cn.com/problems/permutations/.md)
+- [46. 全排列](https://leetcode-cn.com/problems/permutations/)
 ## :floppy_disk: 待定
 ## :coffee: 待定
 ## :bulb: 待定 
