@@ -109,19 +109,15 @@
 - []()
 - []()
 ## :computer: 二叉树
-给前几道题模板代码
-- [513. 找树左下角的值](https://leetcode-cn.com/problems/find-bottom-left-tree-value/) 层序遍历，i=0时res保存，到最后一层res就是答案
+八成模板题，实际上是有的操作需要后序==从何来？有的操作需要前序==怎么下去？偶尔需要中序遍历
 - [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/) int left=help(root->left),实现(不管root是哪个root，它的left就一定能表示这个root左子树有多少个节点)，需要做到(root从何来？后序遍历return left+right+1；怎么下去？if(空节点)return 0)return left+right+1;求出左右子树节点数加自身
 - [112 路径总和](https://leetcode-cn.com/problems/path-sum/) bool left=help(root->left) 实现(不管root是哪个root，它的left就一定能表示这个root从左边下去的最终目标和是否符合),需要做到(root从何来？return left||right表示root能否符合；怎么下去？每次下去sum-=root->val;if(叶节点)return root->val==sum；if(空节点)return false肯定凑不出sum哪怕sun是0)，return left||right求出root作为根节点的左右子树能否有一个符合
 - [#113 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/)help(root->left),实现(不管root是哪个root，它的left就一定能表示这个root从左边下去能够吧每一条路放进res)需要做到(从何来？由于来之前一步path多放了一个，path.pop()达到来之后.怎么下去？path.push_back(root->val)if(根结点)res.push_back(path),if(空节点)return;)return res;
 - [	#437 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)第一步{help(root->left) 实现(不管root是哪个root，从左子树下去就能不断算出符合的路径数)需要做到(sum-=root->val if(sum==0)count++ if(空节点)return ;)}第二步{pathSum(root->left)实现(不管root是哪个root，从左子树下去就能保存所有节点作为起点是否有路径符合)需要做到(从何来？无，怎么下去？经过每个节点都help(root)保存该节点作为起点的符合路径数。)return count;}
-
 - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) 第一步{int left=help(root->left) 实现(不管root是哪个root，它的left就一定能表示这个root左子树高度),需要做到(从何来？return 1+max(left,right),向何去?if(空节点)return 0),return 1+max(left,right)求出树高度}  第二步{bool left=isBalanced(root->left),实现(不管root是哪个root，它的left就一定能表示这个root左子树的左右子树也满足题意),需要做到(从何来?return left&&right,怎么下去？if(左子树高度与右子树高度差1以内)继续下去，if(空节点)return true;)return left&&right求出根结点是否满足，return false在高度差不行无法下去时 }
 - [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)已经实现
 - [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/) bool left=help(p->left,q->left) 实现(不管p q是哪个p q，他们的left就一定能表示这两个p q左子树是否相同),需要做到(从何来?return left&&right左右子树同时成立。怎么下去？if(p->val!=q->val)return false;if(p或q一个有一个没有)return false,if(都没有)return true),return left&&right求出pq作为根结点能否符合题意
 - [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) bool out=help(p->left,q->right),实现(不管p q是哪个p q，他们的out就一定能表示这两个pq靠外的子树是否相同),需要做到(从何来？return left&&right；怎么下去？if(p->val!=q->val)reutrnflase ;if(q p一个不存在一个在)return false;if(p q都不在return true),return out&&in求出pq作为根结点能否符合题意
-- [501. 二叉搜索树中的众数](https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/) 特殊题，unordered_map<int,int>map在中序遍历中用map[root->val]++统计频率,vector<pair<int,int>>vec_sort(map.begin(),map.end())给频率排序，vector<int>res给频率最大几个vec_sort取出return
-- [429. N叉树的层序遍历](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/) 层序遍历，特点是for(auto child:children)q.push(child)
 - [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) help(root->left),实现(不管root是哪个root，从左边下去时都能添加所有root->val和->到string path,添加所有path到res),需要做到(从何来？不用.怎么下去？path+=to_string(root->val),path+="->";if(叶节点)res.push_back(path)if(空节点)return ;)return res;
 - [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) help(root->left),实现(不管root是哪个root，从左边下去都能添加左叶子到int res),需要做到(从何来？不用。怎么下去？一直下去，if(左节点是叶节点)res.push_back(root->left->val)if(空节点)return ;)return res;
 - [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)TreeNode* left=help(root->left),实现(不管root是哪个root，它的left就一定能在这个root左子树有p或q时返回p或q，否则返回空),需要做到(if(!left)return right;if(!right)return left;if(都有)return root)怎么下去？下去，if(root==q或p)return root,if(空节点)return nullptr;)return root或空节点
@@ -130,7 +126,6 @@
 - [	#199 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) 层序遍历，特点是在i=level_size-1时把pop的节点放进res
 - [	#124 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) int left=max(0,help(root->left)),实现(不管root是哪个root，这个root的left就一定能表示左子树一条路径所能贡献的最大值)，需要做到(从何来？return root->val+max(left,right)，怎么下去？下去，if(空节点)return 0;)res不断更新root->val+left+right,return res
 - [	#129 求根到叶子节点数字之和](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/) int left=help(root->left)，实现(不管root是哪个root，它的left就一定能表示这个root从左子树下去节点和),需要做到(从何来？return left+right;怎么下去？下去，不断更新sum=sum*10+root->val；if(叶节点)return sum;if(空节点)return 0；
-- [	#117 填充每个节点的下一个右侧节点指针 II	](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/) 层序遍历，特点是每pop一个node就pre->next=node;pre再来到node位置
 - [	#116 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) 同上
 - [701. 二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/) root->left=insertIntoBST(root->left);要实现(不管root是哪个root，root->left在空着符合条件时能够插入)需要做到(从何来？不用。怎么下去？if(val<root->val)下去，if(空节点)return new node(val);)最后返回root
 - [687. 最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/) int left=help(root->left) 要做到(不管root是哪个root，它的left就一定能表示这个root从左子树下去相同节点个数)需要做到(从何来？if(root->val==上一个节点val)return max(left,right)+1;否则return 0；怎么下去？下去，if(空节点)return 0;)return res-1,res表示节点数不断更新left+right+1
@@ -142,21 +137,13 @@
 - [剑指 Offer 26. 树的子结构](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/) 第一步{bool left=help(A->left,B->left)要实现(不管AB是哪个AB，他们的left都能判断AB左子树是否包含)需要做到(从何来？return left&&right;怎么下去?if(AB值不同)return false;if(A有B没有)return true；if(A没有B有)return false;if(A没B没)return true;}第二步{res=isSameTree(A->left,B)要实现(如果A这个节点不行，换一个节点比较)需要做到(从何来？无。怎么下去？res=isSameTree(A,B),if(res不行)下去}return res;
 - [572. 另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/)同上上，唯一区别是第一步if(A有B没有)return false;
 - [1367. 二叉树中的列表](https://leetcode-cn.com/problems/linked-list-in-binary-tree/)同上，唯一区别是从何来？return left||right;
-
 - [	#1382 将二叉搜索树变平衡](https://leetcode-cn.com/problems/balance-a-binary-search-tree/) 第一步{中序遍历将结果保存在vector<int>sort_ok里面}第二步{root->left=help(begin,mid-1)实现(不管root是哪个root，root->left都能指向一个新的中点)需要做到(从何来？return root给个中点节点，怎么下去？每一个节点都要mid=(begin+end)/2,root=new Node(sort_ok[mid])}
 - [	#108 将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/) 上题第二步已实现
-- [	#107 二叉树的层次遍历 II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/) 层序遍历，最后reverse
-- [	#103 二叉树的锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/) 用deque,bool odd表示奇数行，if(odd)不变；if(!odd),pop_back(),push_front而且先push 右再push左
-- [	#102 二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/) 层序遍历
 - [	#99 恢复二叉搜索树](https://leetcode-cn.com/problems/recover-binary-search-tree/) 第一步中序遍历得到sort_nums 第二步找到sort_nums中错误的{one,two},第三步{help(root->left) 实现(不管root是哪个root，从这个root左子树下去都能找到一个错误的数并更改)需要做到(从何来？无；怎么下去？if(root->val==其中一个错误的数)更改，if(!root)return;每次--count两次后return强制终止)}
 - [	#94 二叉树的中序遍历](https://leetcode-cn.com/problems/binary-tree-inorder-traversal/) 三种做法，递归法最实用，迭代法效率=递归，代码复杂，莫里斯遍历节省空间。Morris{root轨迹就像一把梳子1找到先节点pre_node;2pre_node指向对应root；3root不断向左同时重复就像梳子的手柄12；4此时root在最左，res.push_back(root);(pre_node多次重复1来到该去位置只是为了在跟在root后面恢复恢复nullptr)pre_node=nullptr;root=root-right;不断重复梳子的梳头}
 - [	#98 验证二叉搜索树](https://leetcode-cn.com/problems/validate-binary-search-tree/) 中序遍历
-- [	#889 根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/) root->left=help(pre_begin+1,pre_begin+1+left_len,post_begin,post_begin+left_len) ;root->right=help(pre_begin+1+left_len,pre_end,post_begin+left_len,post_end-1) int len=hash_index[pre[pre_begin+1]]+1-post_begin;精华三行代码
 - [	#114 二叉树展开为链表](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/) help(root->left) 实现(不管root是哪个root，从左边下去就一定能将所有节点变成右直链)需要做到(从何来？root->right=root->left;root->left=nullptr;提前备份root->right;找最右节点->right=备份,怎么下去？if(!root)return ;
-- [	#96 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) dp[i]+=dp[j]*dp[i-j-1]，有i个节点的树的个数+=有j个节点的左子树个数*有i-j-1个节点的右子树个数
 - [	#95 不同的二叉搜索树 II](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/) 复杂递归 TreeNode* left=help(begin,i-1),实现(不管root是哪个root，它的每个left都能保存所有可能的树)需要做到(从何来？tmp_tree=new tree(),all_tree.push_back(tmp_tree)memo[][]保存alltree。return memo[][].怎么下去？每一次return memo[][] if(begin>end)return {nullptr})return memo[][];可以发现从何来和最终答案return操作相同，这说明递归过程和最终要返回的值操作一样但参数不同，如return memo[begin][end]中begin和end在递归中和最终不同，所以才说不会理会递归细节从何来，而要关注如何返回最终值。
-- [#106 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)精华3代码 root->left=help(ord_begin,ord_root,post_begin,post_begin+left_len)root->right=help(ord_root+1,ord_end,post_begin+left_len+1,post_end-1) left_len=hash_index[post[post_end-1]-ord_begin;
-- [	#105 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)精华3代码 root->left=help(pre_begin+1,pre_begin+1+left_len,ord_begin,ord_root)root->right=help(pre_begin+1+left_len,pre_end,ord_root+1,ord_end);left_len=hash_index[pre[pre_begin]]-ord_begin;
 - [	#654 最大二叉树](https://leetcode-cn.com/problems/maximum-binary-tree/) root->left=help(begin,max_index) 实现(无论root是哪个root，root->left就一定要是当前最大数左边数形成)需要做到(从何来？由后可知返回new 节点。怎么下去？for寻找max_index，new节点if(begin>end)return nullptr;)return root;
 - [	#145 二叉树的后序遍历](https://leetcode-cn.com/problems/binary-tree-postorder-traversal/) 迭代法前序遍历基础上先push左在push右，得到中右左最后reverse得到左右中
 - [	#144 二叉树的前序遍历](https://leetcode-cn.com/problems/binary-tree-preorder-traversal/)迭代法stack，每pop就push右再push左
@@ -164,7 +151,22 @@
 - [	#700 二叉搜索树中的搜索](https://leetcode-cn.com/problems/search-in-a-binary-search-tree/) help(root->left) 实现(无论root是哪个root，从他的左子树下去就可能找到对的点并返回)需要做到(从何来？无。怎么下去？if(val<root->val)下哪一条路，if(val==root->val)return root;if(!)return nullptr;
 - [#538 把二叉搜索树转换为累加树](https://leetcode-cn.com/problems/convert-bst-to-greater-tree/) 中序遍历，不断更新sum+=root->val，不断root->val=sum,第i个大的节点值等于前i-1个节点值和
 - [	#230 二叉搜索树中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/) 中序遍历，不断i++，知道==k就res=root->val并返回
+  
+一成层序遍历
+- [513. 找树左下角的值](https://leetcode-cn.com/problems/find-bottom-left-tree-value/) 层序遍历，i=0时res保存，到最后一层res就是答案
+- [429. N叉树的层序遍历](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/) 层序遍历，特点是for(auto child:children)q.push(child)
+- [	#117 填充每个节点的下一个右侧节点指针 II	](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/) 层序遍历，特点是每pop一个node就pre->next=node;pre再来到node位置
+- [	#107 二叉树的层次遍历 II](https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/) 层序遍历，最后reverse
+- [	#103 二叉树的锯齿形层次遍历](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/) 用deque,bool odd表示奇数行，if(odd)不变；if(!odd),pop_back(),push_front而且先push 右再push左
+- [	#102 二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/) 层序遍历
 - [	#111 二叉树的最小深度](https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/) 层序遍历，if(叶节点)return depth;
+
+  一成特殊题
+- [501. 二叉搜索树中的众数](https://leetcode-cn.com/problems/find-mode-in-binary-search-tree/) 特殊题，unordered_map<int,int>map在中序遍历中用map[root->val]++统计频率,vector<pair<int,int>>vec_sort(map.begin(),map.end())给频率排序，vector<int>res给频率最大几个vec_sort取出return
+- [#106 从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)精华3代码 root->left=help(ord_begin,ord_root,post_begin,post_begin+left_len)root->right=help(ord_root+1,ord_end,post_begin+left_len+1,post_end-1) left_len=hash_index[post[post_end-1]-ord_begin;
+- [	#105 从前序与中序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)精华3代码 root->left=help(pre_begin+1,pre_begin+1+left_len,ord_begin,ord_root)root->right=help(pre_begin+1+left_len,pre_end,ord_root+1,ord_end);left_len=hash_index[pre[pre_begin]]-ord_begin;
+- [	#889 根据前序和后序遍历构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-postorder-traversal/) root->left=help(pre_begin+1,pre_begin+1+left_len,post_begin,post_begin+left_len) ;root->right=help(pre_begin+1+left_len,pre_end,post_begin+left_len,post_end-1) int len=hash_index[pre[pre_begin+1]]+1-post_begin;精华三行代码
+- [	#96 不同的二叉搜索树](https://leetcode-cn.com/problems/unique-binary-search-trees/) dp[i]+=dp[j]*dp[i-j-1]，有i个节点的树的个数+=有j个节点的左子树个数*有i-j-1个节点的右子树个数
 - []()
 - []()
 - []()
