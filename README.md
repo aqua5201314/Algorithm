@@ -268,19 +268,20 @@
 - []()
 - []()
 ## :cloud: 回溯算法
-- [46. 全排列](https://leetcode-cn.com/problems/permutations/)
-- [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/)
-- [78. 子集](https://leetcode-cn.com/problems/subsets/)
-- [90. 子集 II](https://leetcode-cn.com/problems/subsets-ii/)
-- [77. 组合](https://leetcode-cn.com/problems/combinations/)
-- [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/)
-- [40. 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)
-- [60. 排列序列](https://leetcode-cn.com/problems/permutation-sequence/)
-- [79. 单词搜索](https://leetcode-cn.com/problems/word-search/)
-- [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/)
-- [130. 被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/)
-- [51. N 皇后](https://leetcode-cn.com/problems/n-queens/)
-- [37. 解数独](https://leetcode-cn.com/problems/sudoku-solver/)
+  排列组合子集题：怎么下去，怎么剪枝
+  剪枝3大方法：used[i],不能重复使用同一元素；begin，不能只是换位子。如果begin取得是i+1还可以有used[i]的效果，换句话说begin的前提下如果想重复使用同一个元素就取i，不想就取i+1不用used.nums[i]==nums[i-1]&&!used[i-1]，有重复元素，不能返回重复排列，不能用begin代替used
+- [46. 全排列](https://leetcode-cn.com/problems/permutations/) 怎么下去？(下去，if(path.size()==nums.size())res.push_back(path)return;)怎么剪枝？(给123不能还111，if(!used[i]))
+- [47. 全排列 II](https://leetcode-cn.com/problems/permutations-ii/) 怎么下去？(if(path.size()==nums.size())res.push_back(path)return;)怎么剪枝？(给112不能还222，if(!used[i]),不能还两个211，if(i>0&&nums[i]==nums[i-1]&&!used[i],)
+- [78. 子集](https://leetcode-cn.com/problems/subsets/) 怎么下去？(res.push_back(path))怎么剪枝？(不能给12还12和21，begin,不能给12还11，begin i+1版)
+- [90. 子集 II](https://leetcode-cn.com/problems/subsets-ii/)怎么下去？(res.push_back(path))怎么剪枝？(不能给122还112和211begin，不能给112还112和111begin i+1版，不能给122还122和122 nums[i]==nums&&!used[i-1]
+- [77. 组合](https://leetcode-cn.com/problems/combinations/) 怎么下去？(if(path.size()==k)res.push_back(path)return)怎么剪枝？(不能12和21begin不能11begin i+1版本)
+- [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/)怎么下去？(if(targer==0)res.push_back(path))怎么剪枝？(不能12和21begin可以11begin i版本)
+- [40. 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)怎么下去？(if(targer==0)res.push_back(path))怎么剪枝？(不能12和21begin不能111begin i+1,不能112还211和211nums[i]==nums[i-1]&&!used[i-1])
+ 以下回溯游戏太难，思路灵活，我也不会
+- [79. 单词搜索](https://leetcode-cn.com/problems/word-search/)第一步{forfor从每一个格子出发调用help,help为真就return true否则继续调用}第二步{help(wordIndex,x-1,y)向上，怎么下去？if(board[][]!=word[index])return falseif(index==word.size()到尾了return true,递归前tmp保存board[][]递归后不成立要board[][]=tmp回溯}
+- [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/) 第一回溯{path.push_back("(")help(left-1,right)path.pop_back()}第二回溯{path.push_back(")")help(left,right-1)path.pop_back()}怎么下去？if(left>right)return;if(left==0||right==0)res.push_back(path)return ;if(left<0||right<0)return;
+- [51. N 皇后](https://leetcode-cn.com/problems/n-queens/) 对i行，forj，if(!isValid(board[i][j])return,有效就board[i][j]="Q",help(i+1),board[i][j]="."回溯,怎么下去？(if(i==board.size())res.push_back(board[][])return ;判断是否有效分三步正上方有Q无效，左上方有Q无效，右上方有Q无效。
+- [37. 解数独](https://leetcode-cn.com/problems/sudoku-solver/) for fori行j列，if(有数字)return help(i,j+1),否则for(1to9)if(无效)continue;否则board[][]=;if(递归下一列成立)return true;否则board[][]=.回溯。什么时候有效？for上面没有for左边没有forfor九宫格没有就是有效.怎么下去？if(col==9换行，if(row==9找到return true
 - []()
 - []()
 - []()
