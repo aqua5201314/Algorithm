@@ -277,7 +277,7 @@
 - [77. 组合](https://leetcode-cn.com/problems/combinations/) 怎么下去？(if(path.size()==k)res.push_back(path)return)怎么剪枝？(不能12和21begin不能11begin i+1版本)
 - [39. 组合总和](https://leetcode-cn.com/problems/combination-sum/)怎么下去？(if(targer==0)res.push_back(path))怎么剪枝？(不能12和21begin可以11begin i版本)
 - [40. 组合总和 II](https://leetcode-cn.com/problems/combination-sum-ii/)怎么下去？(if(targer==0)res.push_back(path))怎么剪枝？(不能12和21begin不能111begin i+1,不能112还211和211nums[i]==nums[i-1]&&!used[i-1])
- 以下回溯游戏太难，思路灵活，我也不会
+- 以下回溯游戏太难，思路灵活，我也不会
 - [79. 单词搜索](https://leetcode-cn.com/problems/word-search/)第一步{forfor从每一个格子出发调用help,help为真就return true否则继续调用}第二步{help(wordIndex,x-1,y)向上，怎么下去？if(board[][]!=word[index])return falseif(index==word.size()到尾了return true,递归前tmp保存board[][]递归后不成立要board[][]=tmp回溯}
 - [22. 括号生成](https://leetcode-cn.com/problems/generate-parentheses/) 第一回溯{path.push_back("(")help(left-1,right)path.pop_back()}第二回溯{path.push_back(")")help(left,right-1)path.pop_back()}怎么下去？if(left>right)return;if(left==0||right==0)res.push_back(path)return ;if(left<0||right<0)return;
 - [51. N 皇后](https://leetcode-cn.com/problems/n-queens/) 对i行，forj，if(!isValid(board[i][j])return,有效就board[i][j]="Q",help(i+1),board[i][j]="."回溯,怎么下去？(if(i==board.size())res.push_back(board[][])return ;判断是否有效分三步正上方有Q无效，左上方有Q无效，右上方有Q无效。
