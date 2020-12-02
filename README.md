@@ -1,6 +1,6 @@
 | 动态规划&nbsp; | 二叉树 | 回溯算法&nbsp;|二分查找| &nbsp;贪心算法&nbsp;&nbsp;|&nbsp;待定&nbsp;&nbsp;|待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |
 | :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| [:pencil2:](#pencil2-动态规划) | [:computer:](#computer-二叉树) | [:cloud:](#cloud-回溯算法) | [:art:](#art-二分查找) | [:floppy_disk:](#floppy_disk-贪心算法) |[:coffee:](#coffee-待定)| [:bulb:](#bulb-待定) |[:wrench:](#wrench-待定)| [:watermelon:](#watermelon-待定) |[:memo:](#memo-待定)|
+| [:pencil2:](#pencil2-动态规划) | [:computer:](#computer-二叉树) | [:cloud:](#cloud-回溯算法) | [:art:](#art-二分查找) | [:floppy_disk:](#floppy_disk-贪心算法) |[:coffee:](#coffee-滑动窗口双指针)| [:bulb:](#bulb-待定) |[:wrench:](#wrench-待定)| [:watermelon:](#watermelon-待定) |[:memo:](#memo-待定)|
 
 
 ## :pencil2: 动态规划
@@ -311,10 +311,11 @@
 - []()
 - []()
 ## :art: 二分查找
-- []()
-- []()
-- []()
-- []()
+  [left,right]区间，只有3种题，找数，找左数，找右树，套同一个模板，只讲述每道题的不同点
+- [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)找数，找不到最后要return left,此时left位置就是本应在的位置
+- [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)找左数找右数，如果左数没有直接return{-1,-1}
+- [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)如果直接二分，如果target在不好，会偏离，因此分if(左边很好)if(target在很好)right去左边if(target在不好)left取不好
+- [81. 搜索旋转排序数组 II](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/)当if(左边很好nums[left]<=nums[mid]时可能会因为两数本就相等而错误以为左边很好，用if(nums[left]==nums[mid])left++来排除重复项
 - []()
 - []()
 - []()
@@ -416,7 +417,7 @@
 - []()
 - []()
 
-## :coffee: 待定 
+## :coffee: 滑动窗口双指针 
 ## :bulb: 待定
 ## :wrench: 待定
 ## :watermelon: 待定
