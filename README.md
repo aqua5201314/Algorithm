@@ -110,11 +110,12 @@
 - []()
 ## :computer: 二叉树
 八成模板题，实际上是有的操作需要后序==从何来？有的操作需要前序==怎么下去？偶尔需要中序遍历
-- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/) int left=help(root->left),实现(不管root是哪个root，它的left就一定能表示这个root左子树有多少个节点)，需要做到(root从何来？后序遍历return left+right+1；怎么下去？if(空节点)return 0)return left+right+1;求出左右子树节点数加自身
-- [112 路径总和](https://leetcode-cn.com/problems/path-sum/) bool left=help(root->left) 实现(不管root是哪个root，它的left就一定能表示这个root从左边下去的最终目标和是否符合),需要做到(root从何来？return left||right表示root能否符合；怎么下去？每次下去sum-=root->val;if(叶节点)return root->val==sum；if(空节点)return false肯定凑不出sum哪怕sun是0)，return left||right求出root作为根节点的左右子树能否有一个符合
-- [#113 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/)help(root->left),实现(不管root是哪个root，它的left就一定能表示这个root从左边下去能够吧每一条路放进res)需要做到(从何来？由于来之前一步path多放了一个，path.pop()达到来之后.怎么下去？path.push_back(root->val)if(根结点)res.push_back(path),if(空节点)return;)return res;
-- [	#437 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)第一步{help(root->left) 实现(不管root是哪个root，从左子树下去就能不断算出符合的路径数)需要做到(sum-=root->val if(sum==0)count++ if(空节点)return ;)}第二步{pathSum(root->left)实现(不管root是哪个root，从左子树下去就能保存所有节点作为起点是否有路径符合)需要做到(从何来？无，怎么下去？经过每个节点都help(root)保存该节点作为起点的符合路径数。)return count;}
-- [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) 第一步{int left=help(root->left) 实现(不管root是哪个root，它的left就一定能表示这个root左子树高度),需要做到(从何来？return 1+max(left,right),向何去?if(空节点)return 0),return 1+max(left,right)求出树高度}  第二步{bool left=isBalanced(root->left),实现(不管root是哪个root，它的left就一定能表示这个root左子树的左右子树也满足题意),需要做到(从何来?return left&&right,怎么下去？if(左子树高度与右子树高度差1以内)继续下去，if(空节点)return true;)return left&&right求出根结点是否满足，return false在高度差不行无法下去时 }
+- [29. 两数相除](https://leetcode-cn.com/problems/divide-two-integers/)先明白递归的本质。(11,3)=2+(5,3)=2+1+(2,3)=2+1+0;return count+div(a-tb,b);
+- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)(a)=1+(b)=1+1+(c)=1+1+1+0;return 1+countNodes(root->left)+countNodes(root->right);
+- [112 路径总和](https://leetcode-cn.com/problems/path-sum/) (a)?=(3-1-(b))?=(2-1-(c))?=(1-1)?return hasPathSum(root->left,sum-root->val)||hasPathSum(root->right,sum-root->val);
+- [#113 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/)a(3-1)=b(2-1)=c(1-1)=空(0),难点是递归后的回溯
+- [	#437 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)a(3-1)=b(2-1)=c(1-1)=空(0)，a为根+b为根+c为根
+- [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)f(a)=a的高度,f(a)=1+max(f(b),f(d))=1+max(1+max(f(c),空),1+max(空，空)).g(a)=a的左右子树深度是否合适，return (abs(height(root->left)-height(root->right))<=1)&&isBalanced(root->left)&&isBalanced(root->right);
 - [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)已经实现
 - [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/) bool left=help(p->left,q->left) 实现(不管p q是哪个p q，他们的left就一定能表示这两个p q左子树是否相同),需要做到(从何来?return left&&right左右子树同时成立。怎么下去？if(p->val!=q->val)return false;if(p或q一个有一个没有)return false,if(都没有)return true),return left&&right求出pq作为根结点能否符合题意
 - [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) bool out=help(p->left,q->right),实现(不管p q是哪个p q，他们的out就一定能表示这两个pq靠外的子树是否相同),需要做到(从何来？return left&&right；怎么下去？if(p->val!=q->val)reutrnflase ;if(q p一个不存在一个在)return false;if(p q都不在return true),return out&&in求出pq作为根结点能否符合题意
@@ -311,24 +312,25 @@
 - []()
 - []()
 ## :art: 二分查找
-  [left,right]区间，只有3种题，找数，找左数，找右树，套同一个模板，只讲述每道题的不同点
-- [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)找数，找不到最后要return left,此时left位置就是本应在的位置
-- [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)找左数找右数，如果左数没有直接return{-1,-1}
-- [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)如果直接二分，如果target在不好，会偏离，因此分if(左边很好)if(target在很好)right去左边if(target在不好)left取不好
-- [81. 搜索旋转排序数组 II](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/)当if(左边很好nums[left]<=nums[mid]时可能会因为两数本就相等而错误以为左边很好，用if(nums[left]==nums[mid])left++来排除重复项
+  考虑缩小，考虑输出，频繁用3个数字举例子来补充细节,一个例子必须执行完，中途想到什么情况立刻找对应例子待会做，例子不同代码不同，不可过度依靠模板，不可背代码
+- [704. 二分查找](https://leetcode-cn.com/problems/binary-search/)123
+- [35. 搜索插入位置](https://leetcode-cn.com/problems/search-insert-position/)123输出nums[mid]缩小left=mid+1,right=mid-1,输出left
+- [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)122找2，缩小right=mid-1,left=mid+1,输出left>right return left;122找2,缩小，left=mid+1,left=mid+1,left>right,输出left>right return right;122找3，left=mid+1;left=mid+1,输出nums[right]!=target return -1;
+- [33. 搜索旋转排序数组](https://leetcode-cn.com/problems/search-in-rotated-sorted-array/)由于二分找数要在有序找，所以去有序部分找，有序没有就去无序的有序部分找，举例312和231，代码不固定
+- [81. 搜索旋转排序数组 II](https://leetcode-cn.com/problems/search-in-rotated-sorted-array-ii/)爆哭，为了做这道题，我举例了212,221,312,131,11.。。
+- [153. 寻找旋转排序数组中的最小值](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/)爆哭，真的只要举例啊，312
+- [154. 寻找旋转排序数组中的最小值 II](https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array-ii/)212中途找到211
+- [300. 最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/)来一个大于dp尾的数，放尾，end++，来一个小于等于尾的数，二分放进合适地方end不变挤掉一个数
+- [852. 山脉数组的峰顶索引](https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/)122,121
+- [1095. 山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/)121,012,10 -1,先找top，在找左边，再找右边
+- [69. x 的平方根](https://leetcode-cn.com/problems/sqrtx/)012
 - []()
 - []()
 - []()
 - []()
 - []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()
+- [4. 寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/)12 1, 12 12, 1 12345痛哭，细节是魔鬼，举例需要花大量时间，建议学做法思想就行
+- [658. 找到 K 个最接近的元素](https://leetcode-cn.com/problems/find-k-closest-elements/)123,0123,找到x之后就是不断比较，在举例比较中不断完善代码，需要大量时间。
 - []()
 - []()
 - []()
