@@ -1,3 +1,4 @@
+多研究高赞题解，我只是整理题并略微给出我的想法
 | 动态规划&nbsp; | 二叉树 | 回溯算法&nbsp;|二分查找| &nbsp;贪心算法&nbsp;&nbsp;|&nbsp;滑动窗口双指针&nbsp;&nbsp;|待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |
 | :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | [:pencil2:](#pencil2-动态规划) | [:computer:](#computer-二叉树) | [:cloud:](#cloud-回溯算法) | [:art:](#art-二分查找) | [:floppy_disk:](#floppy_disk-贪心算法) |[:coffee:](#coffee-滑动窗口双指针)| [:bulb:](#bulb-待定) |[:wrench:](#wrench-待定)| [:watermelon:](#watermelon-待定) |[:memo:](#memo-待定)|
@@ -109,19 +110,19 @@
 - []()
 - []()
 ## :computer: 二叉树
-八成模板题，实际上是有的操作需要后序==从何来？有的操作需要前序==怎么下去？偶尔需要中序遍历
-- [29. 两数相除](https://leetcode-cn.com/problems/divide-two-integers/)先明白递归的本质。(11,3)=2+(5,3)=2+1+(2,3)=2+1+0;return count+div(a-tb,b);
-- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)(a)=1+(b)=1+1+(c)=1+1+1+0;return 1+countNodes(root->left)+countNodes(root->right);
-- [112 路径总和](https://leetcode-cn.com/problems/path-sum/) (a)?=(3-1-(b))?=(2-1-(c))?=(1-1)?return hasPathSum(root->left,sum-root->val)||hasPathSum(root->right,sum-root->val);
-- [#113 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/)a(3-1)=b(2-1)=c(1-1)=空(0),难点是递归后的回溯
-- [	#437 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)a(3-1)=b(2-1)=c(1-1)=空(0)，a为根+b为根+c为根
-- [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)f(a)=a的高度,f(a)=1+max(f(b),f(d))=1+max(1+max(f(c),空),1+max(空，空)).g(a)=a的左右子树深度是否合适，return (abs(height(root->left)-height(root->right))<=1)&&isBalanced(root->left)&&isBalanced(root->right);
-- [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)已经实现
-- [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/) bool left=help(p->left,q->left) 实现(不管p q是哪个p q，他们的left就一定能表示这两个p q左子树是否相同),需要做到(从何来?return left&&right左右子树同时成立。怎么下去？if(p->val!=q->val)return false;if(p或q一个有一个没有)return false,if(都没有)return true),return left&&right求出pq作为根结点能否符合题意
-- [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/) bool out=help(p->left,q->right),实现(不管p q是哪个p q，他们的out就一定能表示这两个pq靠外的子树是否相同),需要做到(从何来？return left&&right；怎么下去？if(p->val!=q->val)reutrnflase ;if(q p一个不存在一个在)return false;if(p q都不在return true),return out&&in求出pq作为根结点能否符合题意
-- [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) help(root->left),实现(不管root是哪个root，从左边下去时都能添加所有root->val和->到string path,添加所有path到res),需要做到(从何来？不用.怎么下去？path+=to_string(root->val),path+="->";if(叶节点)res.push_back(path)if(空节点)return ;)return res;
-- [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/) help(root->left),实现(不管root是哪个root，从左边下去都能添加左叶子到int res),需要做到(从何来？不用。怎么下去？一直下去，if(左节点是叶节点)res.push_back(root->left->val)if(空节点)return ;)return res;
-- [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)TreeNode* left=help(root->left),实现(不管root是哪个root，它的left就一定能在这个root左子树有p或q时返回p或q，否则返回空),需要做到(if(!left)return right;if(!right)return left;if(都有)return root)怎么下去？下去，if(root==q或p)return root,if(空节点)return nullptr;)return root或空节点
+明白递归的本质是原地展开,中左右，左右中后，没有模板，多理解，如果想用模板，记不住的
+- [29. 两数相除](https://leetcode-cn.com/problems/divide-two-integers/)先明白递归的本质。f(x,x`)x/x`,f(11,3)=2+f(5,3)=2+1+f(2,3)=2+1+0;
+- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)f(x)x树节点，f(a)=1+f(b)+f(c)=...
+- [112 路径总和](https://leetcode-cn.com/problems/path-sum/)f(x,sum)是否有，f(a,3)=f(b,2)||f(d,1)=...
+- [#113 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/)path回溯pop
+- [	#437 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)
+- [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+- [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+- [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/)
+- [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
+- [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) path值传递，每次递归都要复制新路，不会互相影响
+- [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)leave大部分情况0，flag标记
+- [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)c的lson,rson都是false(递归之前得知)，也不等于pq，所以c的状态是false。
 - [	#235 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) 同上
 - [	#226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/) invertTree(root->left),实现(不管root是哪个root，从左边下去经过每个节点都能翻转)，需要做到(从何来？没有。怎么下去？下去，每次swap(左右),if(空节点)return;)return root
 - [	#199 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) 层序遍历，特点是在i=level_size-1时把pop的节点放进res
