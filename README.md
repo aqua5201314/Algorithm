@@ -1,7 +1,7 @@
 递归回溯动态规划相似，二分查找滑动窗口双指针相似，贪心呃呃呃
-| 动态规划&nbsp; | 二叉树 | 回溯算法&nbsp;|二分查找| &nbsp;贪心算法&nbsp;&nbsp;|&nbsp;滑动窗口双指针&nbsp;&nbsp;|待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |
+| 动态规划&nbsp; | 二叉树 | 回溯算法&nbsp;|二分查找| &nbsp;贪心算法&nbsp;&nbsp;|&nbsp;滑动窗口双指针&nbsp;&nbsp;|哈希表| &nbsp;&nbsp;待定&nbsp;&nbsp; |待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |
 | :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| [:pencil2:](#pencil2-动态规划) | [:computer:](#computer-二叉树) | [:cloud:](#cloud-回溯算法) | [:art:](#art-二分查找) | [:floppy_disk:](#floppy_disk-贪心算法) |[:coffee:](#coffee-滑动窗口双指针)| [:bulb:](#bulb-待定) |[:wrench:](#wrench-待定)| [:watermelon:](#watermelon-待定) |[:memo:](#memo-待定)|
+| [:pencil2:](#pencil2-动态规划) | [:computer:](#computer-二叉树) | [:cloud:](#cloud-回溯算法) | [:art:](#art-二分查找) | [:floppy_disk:](#floppy_disk-贪心算法) |[:coffee:](#coffee-滑动窗口双指针)| [:bulb:](#bulb-哈希表) |[:wrench:](#wrench-待定)| [:watermelon:](#watermelon-待定) |[:memo:](#memo-待定)|
 
 
 ## :pencil2: 动态规划
@@ -434,7 +434,7 @@
 - []()
 - []()
 - []()
-## :bulb: 待定
+## :bulb: 哈希表
 ## :wrench: 待定
 ## :watermelon: 待定
 ## :memo: 待定
