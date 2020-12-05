@@ -38,8 +38,8 @@
 - [	#343 整数拆分](https://leetcode-cn.com/problems/integer-break/) 要么拆一个j，(i-j) * j,要么不变，dp[i]要么继续拆j * dp[i-j]
 - [	#221 最大正方形](https://leetcode-cn.com/problems/maximal-square/) max_dp不断找出dp[i][j]最大值就是最大边长
 - [174. 地下城游戏](https://leetcode-cn.com/problems/dungeon-game/)- [题解，递归回溯加memo，动态规划](https://leetcode-cn.com/problems/dungeon-game/solution/di-gui-hui-su-jia-memohuan-dong-tai-gui-h0am1/)
-- []()
-- []()
+- [42. 接雨水](https://leetcode-cn.com/problems/trapping-rain-water/)- [题解](https://leetcode-cn.com/problems/trapping-rain-water/solution/bao-li-dong-tai-gui-hua-by-zhou-zi-hong-i4j8/)
+
 - []()
 - []()
 - []()
@@ -439,9 +439,11 @@
 - [15. 三数之和](https://leetcode-cn.com/problems/3sum/)- [题解](https://leetcode-cn.com/problems/3sum/solution/shuang-zhi-zhen-jian-zhi-by-zhou-zi-hong-4fan/)
 - [16. 最接近的三数之和](https://leetcode-cn.com/problems/3sum-closest/)- [题解](https://leetcode-cn.com/problems/3sum-closest/solution/shuang-zhi-zhen-c-by-zhou-zi-hong-j7z1/)
 - [18. 四数之和](https://leetcode-cn.com/problems/4sum/)- [题解](https://leetcode-cn.com/problems/4sum/solution/shuang-zhi-zhen-c-by-zhou-zi-hong-wlmb/)
-- []()- []()
-- []()- []()
-- []()- []()
+- [19. 删除链表的倒数第N个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)- [题解](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/solution/kuai-man-zhi-zhen-c-by-zhou-zi-hong-n7yg/)
+- [26. 删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)- [题解](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/solution/kuai-man-zhi-zhen-c-by-zhou-zi-hong-wgbr/)
+更多题型题解请关注
+- [我的github](https://github.com/aqua5201314/Algorithm/blob/main/README.md)
+- [28. 实现 strStr()](https://leetcode-cn.com/problems/implement-strstr/)- [题解](https://leetcode-cn.com/problems/implement-strstr/solution/shuang-zhi-zhen-cshi-ji-huan-shi-bao-li-4lz8i/)
 - []()- []()
 - []()- []()
 - []()- []()
