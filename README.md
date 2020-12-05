@@ -1,10 +1,11 @@
-多研究高赞题解，我只是整理题并略微给出我的想法
+苦心专研递归回溯动态规划
 | 动态规划&nbsp; | 二叉树 | 回溯算法&nbsp;|二分查找| &nbsp;贪心算法&nbsp;&nbsp;|&nbsp;滑动窗口双指针&nbsp;&nbsp;|待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |待定| &nbsp;&nbsp;待定&nbsp;&nbsp; |
 | :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | [:pencil2:](#pencil2-动态规划) | [:computer:](#computer-二叉树) | [:cloud:](#cloud-回溯算法) | [:art:](#art-二分查找) | [:floppy_disk:](#floppy_disk-贪心算法) |[:coffee:](#coffee-滑动窗口双指针)| [:bulb:](#bulb-待定) |[:wrench:](#wrench-待定)| [:watermelon:](#watermelon-待定) |[:memo:](#memo-待定)|
 
 
 ## :pencil2: 动态规划
+ 递归回溯，动态规划
 - [	#322 零钱兑换](https://leetcode-cn.com/problems/coin-change/) dp[i-coin]
 - [	#198 打家劫舍](https://leetcode-cn.com/problems/house-robber/) dp[i]=max(dp[i-1],dp[i-2]+nums[i]),int tmp,dp_i,dp_pre_i压缩空间
 - [	#213 打家劫舍 II](https://leetcode-cn.com/problems/house-robber-ii/) 调用两次，一次偷前不偷尾，另一次相反
@@ -36,7 +37,7 @@
 - [	#5 最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) 求begin和end用substr复制子字符串，如果左右不等就是false，相等，长度<=3为true，相等且长度大于3,dp[i][j]=dp[i+1][j-1],只要true就不断更新begin=i，end=j
 - [	#343 整数拆分](https://leetcode-cn.com/problems/integer-break/) 要么拆一个j，(i-j) * j,要么不变，dp[i]要么继续拆j * dp[i-j]
 - [	#221 最大正方形](https://leetcode-cn.com/problems/maximal-square/) max_dp不断找出dp[i][j]最大值就是最大边长
-- []()
+- [174. 地下城游戏](https://leetcode-cn.com/problems/dungeon-game/)- [题解，递归回溯加memo，动态规划](https://leetcode-cn.com/problems/dungeon-game/solution/di-gui-hui-su-jia-memohuan-dong-tai-gui-h0am1/)
 - []()
 - []()
 - []()
@@ -110,25 +111,29 @@
 - []()
 - []()
 ## :computer: 二叉树
-明白递归的本质是原地展开,中左右，左右中后，没有模板，多理解，如果想用模板，记不住的
+递归终止条件可多个
+后序遍历：终止递归赋值leftright，leftright都有后回溯返回利用leftright赋值上面的leftright
+即是是前序遍历，也可能在递归停止，回溯时有操作
+原地展开
+
 - [29. 两数相除](https://leetcode-cn.com/problems/divide-two-integers/)先明白递归的本质。f(x,x`)x/x`,f(11,3)=2+f(5,3)=2+1+f(2,3)=2+1+0;
-- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)f(x)x树节点，f(a)=1+f(b)+f(c)=...
-- [112 路径总和](https://leetcode-cn.com/problems/path-sum/)f(x,sum)是否有，f(a,3)=f(b,2)||f(d,1)=...
-- [#113 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/)path回溯pop
-- [	#437 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)
-- [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+- [222. 完全二叉树的节点个数](https://leetcode-cn.com/problems/count-complete-tree-nodes/)原地展开
+- [112 路径总和](https://leetcode-cn.com/problems/path-sum/)原地展开f(x,sum)是否有，f(a,3)=f(b,2)||f(d,1)=...
+- [#113 路径总和 II](https://leetcode-cn.com/problems/path-sum-ii/)前序，回溯时pop
+- [	#437 路径总和 III](https://leetcode-cn.com/problems/path-sum-iii/)由于没有leftright，return不会赋值，唯一一次return有用在最后的回溯return答案
+- [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)原地展开
 - [#104 二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) - [110 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
-- [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/)
-- [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
-- [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) path值传递，每次递归都要复制新路，不会互相影响
-- [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)leave大部分情况0，flag标记
-- [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)c的lson,rson都是false(递归之前得知)，也不等于pq，所以c的状态是false。
+- [	#100 相同的树](https://leetcode-cn.com/problems/same-tree/)原地展开
+- [	#101 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)原地展开，两个节点的儿子的镜像
+- [	#257 二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) 前序，两个终止条件，path值传递，回溯path找到原来状态（path每个状态都被保存，时间空间不行，可以再递归
+- [404. 左叶子之和](https://leetcode-cn.com/problems/sum-of-left-leaves/)原地展开，leave大部分情况0，flag标记
+- [	#236 二叉树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/)后序遍历，2终止条件return给leftright并回溯，leftright都有后回溯且返回给上一层leftright
 - [	#235 二叉搜索树的最近公共祖先](https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) 同上
-- [	#226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/) invertTree(root->left),实现(不管root是哪个root，从左边下去经过每个节点都能翻转)，需要做到(从何来？没有。怎么下去？下去，每次swap(左右),if(空节点)return;)return root
+- [	#226 翻转二叉树](https://leetcode-cn.com/problems/invert-binary-tree/) 后序遍历，swap可以直接翻转空节点，不用if else
 - [	#199 二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/) 层序遍历，特点是在i=level_size-1时把pop的节点放进res
-- [	#124 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) int left=max(0,help(root->left)),实现(不管root是哪个root，这个root的left就一定能表示左子树一条路径所能贡献的最大值)，需要做到(从何来？return root->val+max(left,right)，怎么下去？下去，if(空节点)return 0;)res不断更新root->val+left+right,return res
-- [	#129 求根到叶子节点数字之和](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/) int left=help(root->left)，实现(不管root是哪个root，它的left就一定能表示这个root从左子树下去节点和),需要做到(从何来？return left+right;怎么下去？下去，不断更新sum=sum*10+root->val；if(叶节点)return sum;if(空节点)return 0；
-- [	#116 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) 同上
+- [	#124 二叉树中的最大路径和](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/) cleftright都是0，进入回溯，需要path得出最长，需要更新res，需要return最长路给上一个leftright
+- [	#129 求根到叶子节点数字之和](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/)前序后序实际上只是代码的位置，一个程序可以前序干事后序也干事，如递归是num=num* 10+root->val;回溯时如果是根结点就res+=num;
+- [	#116 填充每个节点的下一个右侧节点指针](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/) 类似镜面对称，都是要跨树操作
 - [701. 二叉搜索树中的插入操作](https://leetcode-cn.com/problems/insert-into-a-binary-search-tree/) root->left=insertIntoBST(root->left);要实现(不管root是哪个root，root->left在空着符合条件时能够插入)需要做到(从何来？不用。怎么下去？if(val<root->val)下去，if(空节点)return new node(val);)最后返回root
 - [687. 最长同值路径](https://leetcode-cn.com/problems/longest-univalue-path/) int left=help(root->left) 要做到(不管root是哪个root，它的left就一定能表示这个root从左子树下去相同节点个数)需要做到(从何来？if(root->val==上一个节点val)return max(left,right)+1;否则return 0；怎么下去？下去，if(空节点)return 0;)return res-1,res表示节点数不断更新left+right+1
 - [617. 合并二叉树](https://leetcode-cn.com/problems/merge-two-binary-trees/) root->left=help(p->left,q->left) 实现(无论root是新树的哪个节点，root->left一定能指向p q左节点的合并节点)需要做到(从何来？无，怎么下去？if(都有节点)return new node*(p->val+q->val)，if(q p一个有节点)return 它；if(都没有)return nullptr)return root
@@ -325,8 +330,8 @@
 - [852. 山脉数组的峰顶索引](https://leetcode-cn.com/problems/peak-index-in-a-mountain-array/)122,121
 - [1095. 山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/)121,012,10 -1,先找top，在找左边，再找右边
 - [69. x 的平方根](https://leetcode-cn.com/problems/sqrtx/)012
-- []()
-- []()
+- [50. Pow(x, n)](https://leetcode-cn.com/problems/powx-n/)y是当前节点的一部分，回溯时return y*y给上一个节点的y
+- [74. 搜索二维矩阵](https://leetcode-cn.com/problems/search-a-2d-matrix/)left,right取123456映射到矩阵，mid=，num=m[mid/n][mid%n]
 - []()
 - []()
 - []()
