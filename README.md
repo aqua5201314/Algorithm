@@ -426,6 +426,14 @@
 - []()
 
 ## :coffee: 滑动窗口双指针 
+- [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)- [题解](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/hua-dong-chuang-kou-c-by-zhou-zi-hong-2zbe/)
+- [438. 找到字符串中所有字母异位词](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/)- [题解](https://leetcode-cn.com/problems/find-all-anagrams-in-a-string/solution/hua-dong-chuang-kou-shuang-zhi-zhen-by-z-nm8y/)
+- [567. 字符串的排列](https://leetcode-cn.com/problems/permutation-in-string/)- [题解](https://leetcode-cn.com/problems/permutation-in-string/solution/hua-dong-chuang-kou-shuang-zhi-zhen-by-z-zcfe/)
+- [76. 最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring/)- [题解](https://leetcode-cn.com/problems/minimum-window-substring/solution/hua-dong-chuang-kou-shuang-zhi-zhen-by-z-khxz/)
+- []()- []()
+- []()
+- []()
+- []()
 ## :bulb: 待定
 ## :wrench: 待定
 ## :watermelon: 待定
