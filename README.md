@@ -1039,22 +1039,73 @@
 - []()
 - []()
 ## :watermelon: 排序算法
-- 排序算法
--- for每次从头，相邻比较大就交换，这样每一次循环把未排序的最大放在后面
-
+### 冒泡排序
+ for每次从头，相邻比较大就交换，这样每一次循环把未排序的最大放在后面
 ```C++
 int a[5] = { 2,6,1,234,51 };
-	for (int i = 0; i < 5; i++) {
-		bool flag = true;
-		for (int j = 0; j < 5 - 1 - i; j++) {
-			if (a[j] > a[j + 1]) {
-				int tmp = a[j+1];
-				a[j + 1] = a[j];
-				a[j] = tmp;
-				flag = false;
-			}
+for (int i = 0; i < 5; i++) {
+	bool flag = true;
+	for (int j = 0; j < 5 - 1 - i; j++) {
+		if (a[j] > a[j + 1]) {
+			int tmp = a[j+1];
+			a[j + 1] = a[j];
+			a[j] = tmp;
+			flag = false;
 		}
-		if (flag)break;
 	}
+	if (flag)break;
+}
+```
+### 选择排序
+选一个最小的放到未排序开头
+```C++
+int a[5] = { 1,523,21,51,1 };
+for (int i = 0; i < 5-1; i++) {
+	int min_id = i;
+	for (int j = i+1; j < 5; j++) {
+		if (a[min_id] > a[j])min_id = j;
+	}
+	int tmp = a[min_id];
+	a[min_id] = a[i];
+	a[i] = tmp;
+}
+```
+### 插入排序
+内层从未排序第一个插到排序好的合适地方
+```C++
+for (int i = 1; i < 5; i++){
+	int tmp = a[i];
+	int j = i - 1;
+	while (j >= 0 && a[j] > tmp){
+		a[j + 1] = a[j];
+		j--;
+	}
+	a[j + 1] = tmp;
+}
+```
+### 十六进制转化为10进制，10进制转化为10进制以内
+```C++
+int turn_ten(string nums) {
+	int res = 0;
+	for (int i = nums.size() - 1,j=0; i >= 0; --i,++j) {
+		if (nums[i] <= '9' && nums[i] >= '0')res += (nums[i] - '0') * pow(16, j);
+		else if (nums[i] <= 'F' && nums[i] >= 'A')res += (nums[i] - 'A' + 10) * pow(16, j);
+		else if (nums[i] <= 'f' && nums[i] >= 'a')res += (nums[i] - 'a' + 10) * pow(16, j);
+	}
+	return res;
+}
+void turn_m(int ten,int m) {
+	if (ten/m)turn_m(ten/m,m);
+	cout << ten % m;
+}
+int main() {
+	string nums;
+	int m;
+	cin >> nums;
+	int ten = turn_ten(nums);
+	cout <<ten<< endl;
+	cin >> m;
+	turn_m(ten,m);
+}
 ```
 ## :memo: 待定
