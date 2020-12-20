@@ -1039,8 +1039,8 @@
 - []()
 - []()
 ## :watermelon: 排序算法
-* 排序算法，for每次从头，相邻比较大就交换，这样每一次循环把未排序的最大放在后面
-	
+- 排序算法，for每次从头，相邻比较大就交换，这样每一次循环把未排序的最大放在后面
+![](https://cn.bing.com/images/search?q=%e5%9b%be%e7%89%87&id=6AFC07AEA6D29FF1FF1CA2BF98E79BCA0202BECD&FORM=IQFRBA)
 	int a[5] = { 2,6,1,234,51 };
 	for (int i = 0; i < 5; i++) {
 		bool flag = true;
