@@ -1094,9 +1094,13 @@ int turn_ten(string nums) {
 	}
 	return res;
 }
-void turn_m(int ten,int m) {
-	if (ten/m)turn_m(ten/m,m);
-	cout << ten % m;
+void turn_m(int ten,int m){
+	if(ten/m){turn_m(ten/m,m);}
+	int a=ten%m;
+	if(a>=10){
+		cout<<(char)(a-10+'a');
+	}
+	else {cout<<a;}
 }
 int main() {
 	string nums;
